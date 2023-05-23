@@ -1,0 +1,37 @@
+{{#> layout}}
+<body class="admin">
+    <div class="contenedor-admin">
+        {{#if resultado}}
+        {{#each resultado}}
+        <div class="receta">
+            <form action="/modificar" method="post">
+                <input type="hidden" name="id" value="{{recetas_id}}">
+                <ul>Rut Paciente: <input type="text" name="rut_paciente_recetas"
+                        placeholder="Rut" value="{{this.rut_paciente_recetas}}"
+                        readonly></ul>
+                <ul>Rut Médico: <input type="text" name="rut_medico"
+                        placeholder="Rut Médico" value="{{this.rut_medico}}"
+                        readonly></ul>
+                <ul>Nombre Médico: <input type="text" name="nombre_medico"
+                        placeholder="Nombre Médico"
+                        value="{{this.nombre_medico}}" readonly></ul>
+                <ul>Especialidad: <input type="text" name="especialidad"
+                        placeholder="Especialidad"
+                        value="{{this.especialidad_medico}}" readonly></ul>
+                <ul>Fecha Emisión: {{this.fechaemision}}</ul>
+                <ul>Estado: {{this.vigente}}</ul>
+                <select name="medicamento" required>
+                    {{#each ../medicinas}}
+                    <option value="{{id_nombre_medicamento}}">{{id_nombre_medicamento}},{{id_contenido}}</option>
+                    {{/each}}
+                    {{@index}}:<option value="{{this.medicamento}}" selected>{{this.medicamento}},{{this.id_contenido}}</option>
+                </select>
+                <input type="text" name="prescripcion"
+                    value="{{this.prescripcion}}" readonly>
+            </form>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+</body>
+{{/layout}}

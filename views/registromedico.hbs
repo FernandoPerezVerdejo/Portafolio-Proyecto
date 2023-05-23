@@ -1,0 +1,92 @@
+{{#> layout}}
+<body class="cuerpo-pagina-login">
+    <main class="proyector-registro">
+        <form class="formularioregistro" action="/registromedico" method="post">
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Rut</label>
+                <input type="text" class="form-control is-invalid"
+                    name="rut"
+                    id="floatingInput1" placeholder="Rut"
+                    onchange="validacion(rut)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Nombre</label>
+                <input type="text" class="form-control is-invalid"
+                    name="nombre"
+                    id="floatingInput1 username" placeholder="Nombre"
+                    onchange="validacion(nombre)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Apellido</label>
+                <input type="text" class="form-control is-invalid"
+                    name="apellido"
+                    id="floatingInput1 username" placeholder="Apellido"
+                    onchange="validacion(apellido)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="calendario">Fecha Nacimiento</label>
+                <input type="date" class="form-control is-invalid"
+                    name="fechanac"
+                    id="floatingInput1 username calendario"
+                    placeholder="Fecha Nacimiento"
+                    onchange="validacion(fechanac)"
+                    required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Dirección</label>
+                <input type="text" class="form-control is-invalid"
+                    name="direccion"
+                    id="floatingInput1 username" placeholder="Dirección"
+                    onchange="validacion(direccion)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Teléfono</label>
+                <input type="text" class="form-control is-invalid"
+                    name="telefono1"
+                    id="floatingInput1 username" placeholder="Teléfono"
+                    onchange="validacion(telefono1)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Teléfono</label>
+                <input type="text" class="form-control is-invalid"
+                    name="telefono2"
+                    id="floatingInput1 username" placeholder="Teléfono"
+                    onchange="validacion(telefono2)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Usuario</label>
+                <input type="text" class="form-control is-invalid"
+                    name="username"
+                    id="floatingInput1 username" placeholder="Usuario"
+                    onchange="validacion(username)" required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingPassword">Contraseña</label>
+                <input type="password" class="form-control is-invalid"
+                    name="password"
+                    id="floatingPassword1 password" placeholder="Contraseña"
+                    onchange="validacion(password)"
+                    required>
+            </div>
+            <div class="mb-3 has-validation">
+                <label for="floatingInput">Correo Eléctronico</label>
+                <input type="text" class="form-control is-invalid"
+                    name="email"
+                    id="floatingInput"
+                    placeholder="nombre@ejemplo.cl" onchange="validacion(email)"
+                    required>
+            </div>
+            <ul class="botonregistro" style="text-align: center;">
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </ul>
+        </form>
+        <div>
+            {{#if mensaje}}
+            {{mensaje}}
+            {{/if}};
+        </div>
+    </main>
+</body>
+
+
+{{/layout}}

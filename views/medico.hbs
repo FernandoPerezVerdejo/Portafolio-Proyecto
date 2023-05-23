@@ -1,0 +1,148 @@
+{{#> layout}}
+<body class="admin">
+    <div class="contenedor-admin">
+        <img class="img-admin"
+            src="https://img.freepik.com/foto-gratis/manos-doctora-irreconocible-escribiendo-forma-escribiendo-teclado-portatil_1098-20374.jpg?w=996&t=st=1683422529~exp=1683423129~hmac=3848591810abc326f6dbf42021b5dcb2742145963ca77fe421a7573508b316f7"
+            alt="" srcset="" height="400px" width="600px">
+        <h1>Médico</h1>
+        <div>
+            <a class="btn btn-primary" data-bs-toggle="collapse"
+                href="#buscarPaciente" role="button" aria-expanded="false"
+                aria-controls="buscarPaciente">
+                Desplegar Busqueda
+            </a>
+        </div>
+        <div class="collapse" id="buscarPaciente">
+            <form action="/buscarpaciente" method="post">
+                <input type="text" name="rut" placeholder="Rut" required>
+                <ul style="text-align: center;">
+                    <button class="btn btn-primary text-center" type="submit"
+                        style="margin: 0 auto; display: block;">Buscar
+                        Paciente</button>
+                </ul>
+            </form>
+            {{message}}
+        </div>
+        <div>
+            <a class="btn btn-primary" data-bs-toggle="collapse"
+                href="#anadirmedicamento" role="button" aria-expanded="false"
+                aria-controls="anadirmedicamento">
+                Añadir Medicamento
+            </a>
+        </div>
+        <div class="collapse" id="anadirmedicamento">
+            <form action="/anadirmedicamento" method="post">
+                <li>
+                    <input type="text" name="name" placeholder="Nombre Medicamento"
+                        required>
+                </li>
+                <li>
+                    <input type="text" name="content" placeholder="Contenido"
+                        required>
+                </li>
+                <ul>
+                    <button class="btn btn-primary" type="submit">Añadir
+                        Medicamento</button>
+                </ul>
+            </form>
+        </div>
+        {{#if datareceta}}
+        <div class="datos">
+            <div class="">
+                <h5>Rut Paciente:{{datareceta.rut_pacientes}}</h5>
+                <h5>Nombre: {{datareceta.nombre}}</h5>
+                <h5>Apellido: {{datareceta.apellido}}</h5>
+                {{#if btnanadir}}
+                <form action="/buscarreceta/"
+                    method="post">
+                    <input type="hidden" name="rut"
+                        value="{{datareceta.rut_pacientes}}">
+                    <a class="buscar" style="display: flex;
+                        justify-content:center;
+                        align-items:center; text-align: center;"><button
+                            class="btn
+                            btn-primary" type="submit">Buscar
+                            Receta</button></a>
+                </form>
+                <a class="btn btn-primary" data-bs-toggle="collapse"
+                    href="#añadir-receta" role="button" aria-expanded="false"
+                    aria-controls="añadir-receta">
+                    Añadir Receta
+                </a>
+            </div>
+        </div>
+        <div class="collapse añadir-receta" id="añadir-receta">
+            <form class="formulario-añadir" action="/anadirreceta/"
+                method="post">
+                <input type="text" name="rutpaciente" placeholder="Rut Paciente"
+                    required>
+                <input type="text" name="rutmedico" placeholder="Rut Medico"
+                    required>
+                <input type="text" name="nombremedico" placeholder="Nombre Médico"
+                    required>
+                <input type="text" name="especialidadmedico"
+                    placeholder="Especialidad Medico" required>
+                <select name="medicamento" id="" required>
+                    <option value="" disabled selected>Seleccione un Medicamento</option>
+                    {{#each medicamentos}}
+                    <option value="{{id_nombre_medicamento}}">{{id_nombre_medicamento}},{{id_contenido}}</option>
+                    {{/each}}
+                </select>
+                <input type="text" name="prescripcion"
+                    placeholder="prescripcion" required>
+                <a class="añadir"><button class="btn btn-primary" type="submit">Añadir
+                        Receta</button></a>
+            </form>
+        </div>
+        {{/if}}
+        {{/if}}
+        {{#if receta}}
+        {{receta}}
+        {{#each resultadoreceta1}}
+        <div class="receta">
+            <form action="/modificar" method="post">
+                <input type="hidden" name="id" value="{{recetas_id}}">
+                <ul>Rut Paciente: <input type="text" name="rut_paciente_recetas"
+                        placeholder="Rut" value="{{this.rut_paciente_recetas}}"
+                        readonly></ul>
+                <ul>Rut Médico: <input type="text" name="rut_medico"
+                        placeholder="Rut Médico" value="{{this.rut_medico}}"
+                        readonly></ul>
+                <ul>Nombre Médico: <input type="text" name="nombre_medico"
+                        placeholder="Nombre Médico"
+                        value="{{this.nombre_medico}}" readonly></ul>
+                <ul>Especialidad: <input type="text" name="especialidad"
+                        placeholder="Especialidad"
+                        value="{{this.especialidad_medico}}" readonly></ul>
+                <ul>Fecha Emisión: {{this.fechaemision}}</ul>
+                <ul>Estado: {{this.vigente}}</ul>
+                <select name="medicamento" required>
+                    {{#each ../medicinas}}
+                    <option value="{{id_nombre_medicamento}}">{{id_nombre_medicamento}},{{id_contenido}}</option>
+                    {{/each}}
+                    {{@index}}:<option value="{{this.medicamento}}" selected>{{this.medicamento}},{{this.id_contenido}}</option>
+                </select>
+                <input type="text" name="prescripcion"
+                    value="{{this.prescripcion}}" required>
+                <button class="btn btn-primary modificar" type="submit">Modificar</button>
+            </form>
+            <form action="/eliminar" method="post">
+                <input type="hidden" name="id" value="{{recetas_id}}">
+                <button class="btn btn-danger eliminar" type="submit">Eliminar</button>
+            </form>
+        </div>
+
+
+
+        {{/each}}
+        {{/if}}
+    </div>
+    {{#if message1}}
+    <div class="contenedor-mensaje">
+        <div class="mensajeSinDatos">
+            <h1 class="mensaje">{{message1}}</h1>
+        </div>
+    </div>
+    {{/if}}
+</body>
+{{/layout}}

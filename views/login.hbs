@@ -1,0 +1,42 @@
+
+{{#> layout}}
+<body class="cuerpo-pagina-login">
+    <main class="proyector-login">
+        <form class="formulariologin" action="/app" method="post">
+            <div class="form-floating mb-3 has-validation">
+                <input type="text" class="form-control is-invalid"
+                    name="username"
+                    id="floatingInput1 username"
+                    placeholder="Usuario" onchange="validacion(username)"
+                    required>
+                <label for="floatingInput">Usuario</label>
+            </div>
+            <div class="form-floating has-validation">
+                <input type="password" class="form-control is-invalid"
+                    name="password"
+                    id="floatingPassword1 password" placeholder="Password"
+                    onchange="validacion(password)"
+                    required>
+                <label for="floatingPassword">Contraseña</label>
+            </div>
+            <ul class="botonlogin">
+                <button type="submit" class="btn btn-primary">Iniciar
+                    Sesión</button>
+            </ul>
+        </form>
+        {{#if message}}
+        <div class="message-box">
+            <h4>{{message}}</h4>
+            <div class="botones">
+                {{#if boton}}
+                <a class="btn-ok" href="/">OK</a>
+                {{/if}}
+                {{#if botonNo}}
+                <a class="btn-ok" href="login">OK</a>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+    </main>
+</body>
+{{/layout}}

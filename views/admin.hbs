@@ -1,0 +1,112 @@
+{{#> layout}}
+<body class="admin">
+    <div class="contenedor-admin">
+        <img class="img-admin"
+            src="https://wallpapers.com/images/featured/oco8w27tkw40cp90.jpg"
+            alt="" srcset="" width="600px" height="400px">
+        <h1>ADMIN</h1>
+        <div>
+            <a class="btn btn-primary" data-bs-toggle="collapse"
+                href="#collapseTable" role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+                Listar Pacientes
+            </a>
+            <a class="btn btn-primary" data-bs-toggle="collapse"
+                href="#collapseTableUsuarios" role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample" onclick="modificaryelminar(id)">
+                Listar Usuarios
+            </a>
+            <a href="registromedico">Insertar Médico</a>
+        </div>
+        <div>
+            <div class="collapse" id="collapseTable">
+                <button class="btn btn-primary"
+                    onclick="exportTableToExcel('pacientes',
+                    'pacientes-data')">Exportar a Excel</button>
+                <div class="card card-body">
+                    <div>
+                        <table id="pacientes">
+                            <tr>
+                                <th class="campospacientes">Nombre</th>
+                                <th class="campospacientes">Apellido</th>
+                                <th class="campospacientes">Fecha Nacimiento</th>
+                                <th class="campospacientes">Rut</th>
+                                <th class="campospacientes">Direccion</th>
+                                <th class="campospacientes">Telefono 1</th>
+                                <th class="campospacientes">Telefono 2</th>
+                                <th class="campospacientes">Correo</th>
+                            </tr>
+                            {{#each result}}
+                            <tr>
+                                <td class="datospacientes">{{this.nombre}}</td>
+                                <td class="datospacientes">{{this.apellido}}</td>
+                                <td class="datospacientes">{{this.fechanac}}</td>
+                                <td class="datospacientes">{{this.rut_pacientes}}</td>
+                                <td class="datospacientes">{{this.direccion}}</td>
+                                <td class="datospacientes">{{this.telefono1}}</td>
+                                <td class="datospacientes">{{this.telefono2}}</td>
+                                <td class="datospacientes">{{this.email}}</td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="collapse" id="collapseTableUsuarios">
+                <button class="btn btn-primary"
+                    onclick="exportTableToExcel('usuarios',
+                    'usuarios-data')">Exportar a Excel</button>
+                <div class="card card-body">
+                    <div>
+                        <table id="usuarios">
+                            <tr>
+                                <th class="campospacientes">Rut Usuario</th>
+                                <th class="campospacientes">Nombre Usuario</th>
+                                <th class="campospacientes">Contraseña</th>
+                                <th class="campospacientes">Fecha Creación</th>
+                                <th class="campospacientes">Rol</th>
+                                <th class="campospacientes">Modificar</th>
+                                <th class="campospacientes">Eliminar</th>
+                            </tr>
+                            {{#each result2}}
+                            <tr>
+                                <form action="/modificarusuario" method="post">
+                                    <td class="datospacientes"><input
+                                            type="text"
+                                            value="{{this.rut_users}}"
+                                            name="rut_usuario"></td>
+                                    <td class="datospacientes"><input
+                                            type="text"
+                                            value="{{this.username}}"
+                                            name="username"></td>
+                                    <td class="datospacientes"><input
+                                            type="password"
+                                            value="{{this.password}}"
+                                            name="password"></td>
+                                    <td class="datospacientes">{{this.creado}}</td>
+                                    <td class="datospacientes">{{this.rol}}</td>
+                                    <input type="hidden" name="id"
+                                        value="{{this.users_id}}">
+                                    <td class="datospacientes">
+                                        <button class="btn btn-warning">Modificar</button>
+                                    </td>
+                                </form>
+                                <form action="/eliminarusuario" method="post">
+                                    <input type="hidden" name="id"
+                                        value="{{this.users_id}}">
+                                    <td class="datospacientes">
+                                        <button class="btn btn-danger">Eliminar</button>
+                                    </td>
+                                </form>
+                            </tr>
+                            {{/each}}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    {{/layout}}

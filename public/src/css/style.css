@@ -1,0 +1,512 @@
+    /* ------------------header --------------------*/
+
+    .navbar {
+        background-image: url(https://cdn.discordapp.com/attachments/1095779351775162531/1104583661099176037/5.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: right;
+    }
+
+    .container-fluid {
+        text-align: center;
+    }
+
+    .nav-link {
+        color: rgb(0, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .navbar-brand {
+        font-size: 30px;
+    }
+
+    .barranavegadora {
+        /*barra de navegacion fija */
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    #navbarNav {
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+
+    /*-------------------- header -----------------*/
+
+    /* menu derecha fijo */
+
+    .menu-derecho-fijo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        margin-left: auto;
+
+
+    }
+
+    .boton-menu-derecha {
+        background-color: rgba(239, 243, 238, 0.452);
+        border-radius: 25% 0 0 25%;
+        border: 1px solid azure;
+        position: fixed;
+        bottom: 50%;
+        z-index: 100;
+
+    }
+
+    .img-user-log {
+        width: 100px;
+        height: 100px;
+        margin-left: 36%;
+
+    }
+
+    .p-menu-derecha {
+        text-align: center;
+        color: rgb(0, 0, 0);
+    }
+
+    .p-user-log {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .datos-log {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #boton-cerrar-sesion {
+        margin: 0 auto;
+        /* display: none;       desaparecer el boton  */
+
+    }
+
+    /* --------------------body -----------------------*/
+
+    .cuerpo-pagina-index {
+        background-image: url(https://img.freepik.com/vector-gratis/diseno-plantilla-papel-tapiz-medica-abstracta_53876-61802.jpg?w=1060&t=st=1683416845~exp=1683417445~hmac=14b4352077bc6a2116452fd5d1b0b451450034f6a2ef654327cd16e91d481546);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .admin {
+        margin-top: 10%;
+        width: auto;
+        height: auto;
+        background-image: url(https://img.freepik.com/vector-gratis/medico-sanitario-color-azul_1017-26807.jpg?w=996&t=st=1683421630~exp=1683422230~hmac=a945ce6a712eed4a00615d3d290617baab3b9b344f5b717fa290004335bd7c8f);
+    }
+
+    .contenedor-admin {
+        align-items: center;
+        justify-content: center;
+        display: flexbox;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 5%;
+    }
+
+    /*------------- componentes del carrusel ----------- */
+
+    .carrusel-contenedor {
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: 10px;
+    }
+
+    .carousel-inner {
+        border-radius: 10px;
+    }
+
+    .carousel-item {}
+
+
+    #img-carrusel {
+        border-radius: 10px;
+    }
+
+    /*------------- componentes del carrusel ----------- */
+
+    .titulos {
+        text-align: center;
+        padding-top: 6%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .parrafos {
+        text-align: justify;
+        margin-left: 20%;
+        margin-right: 20%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    /*----------------------- main------------------------ */
+
+
+    /* ----------------footer -------------------*/
+
+    .footerindex {
+        display: flex;
+        background-color: black;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        color: white;
+        margin: auto;
+        padding: 3px;
+        z-index: 100;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pfooter {
+        color: azure;
+        height: 10px;
+    }
+
+    .img-footer {}
+
+    .contenedor-fotos {
+        position: fixed;
+        margin-left: 70%;
+    }
+
+    /* ----------------footer -------------------*/
+    /* ---------------------------------------- Contacto ----------------------------------------------------------- */
+
+    .cuerpo-pagina-contacto {
+        background-image: url(https://img.freepik.com/vector-gratis/banner-hexagonal-ciencia-medica-salud_1017-26996.jpg?w=1060&t=st=1683416974~exp=1683417574~hmac=a094f1ce6a758afb55ecf9e4f794fdfe85cb3e608745cff38a5ec02f16e926dc);
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+
+    .proyector-contacto {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .formulario-contacto {
+            width: 100%;
+        }
+    }
+
+    .formulario-contacto {
+        border-style: groove;
+        border-color: black;
+        border-radius: 10px;
+        padding: 2%;
+        background-color: rgb(196, 194, 194);
+        margin: 10% 10px 0 10px;
+        min-width: 300px;
+        width: 80%;
+    }
+
+
+    .boton-enviar-contacto {
+        text-align: center;
+        margin-right: 10%;
+    }
+
+    /* ---------------------------------------- Contacto ----------------------------------------------------------- */
+    /* ------------------------------------------------------- Login ----------------------------------------------- */
+
+    body {
+        background-image: url(https://img.freepik.com/vector-premium/fondo-abstracto-azul_66029-26.jpg?w=740);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .proyector-login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgba(86, 118, 221, 0.534);
+    }
+
+    .formulariologin {
+        background-color: rgba(230, 231, 235, 0.13);
+        padding: 20px;
+        width: 100%;
+        max-width: 400px;
+        border-style: solid;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-floating {
+        position: relative;
+        margin-bottom: 15px;
+    }
+
+    .form-floating label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        padding: 10px;
+        pointer-events: none;
+        transition: all 0.3s ease-out;
+    }
+
+    .form-floating input:focus {
+        outline: none;
+        border-bottom: 1px solid #007bff;
+    }
+
+    .botonlogin {
+        display: flex;
+        justify-content: center;
+    }
+
+    .botonlogin button:hover {
+        background-color: #0069d9;
+    }
+
+    .message-box {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 500px;
+        padding: 20px;
+        background-color: rgb(86, 118, 221);
+        color: #000000;
+        text-align: center;
+        z-index: 9999;
+        border-style: solid;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding-top: 5%;
+        padding-bottom: 3%;
+    }
+
+    .botones {
+        margin-top: 10%;
+    }
+
+    .btn-ok {
+        background-color: #007bff;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    .btn-ok:hover {
+        background-color: #0069d9;
+        text-decoration: none;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .formulariologin {
+            padding: 10px;
+            max-width: 100%;
+        }
+    }
+
+    /* Pantalla pequeña */
+    @media (max-width: 576px) {
+        .formularioregistro {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    /* Pantalla mediana */
+    @media (min-width: 576px) and (max-width: 992px) {
+        .formularioregistro {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    /* Pantalla grande */
+    @media (min-width: 992px) {
+        .formularioregistro {
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    .proyector-registro {
+        margin-top: 13%;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    .formularioregistro {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        justify-content: center;
+        width: 30%;
+        margin-left: 38%;
+        border-style: solid;
+        border-color: black;
+        border-radius: 25px;
+        background-color: rgb(221, 221, 221);
+    }
+
+    .btn-registro {
+        margin-left: 46%;
+    }
+
+    .registro {
+        margin-top: -28%;
+        margin-left: 68%;
+    }
+
+    #collapseTable {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+    }
+
+    .campospacientes {
+        width: 1%;
+    }
+
+    .datospacientes {
+        width: 1%;
+    }
+
+    #collapseTableUsuarios {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-top: 5%;
+    }
+
+    .datos {
+        padding-top: 2%;
+        max-width: 300px;
+        max-height: 200px;
+        margin: 0 auto;
+        padding-bottom: 13%;
+        background-color: #b5b8ff;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 25px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .datos {
+            max-width: 100%;
+        }
+    }
+
+    .receta {
+        max-width: 450px;
+        /* set the maximum width for the div */
+        margin: 0 auto;
+        /* center the div horizontally */
+        padding: 20px;
+        /* add some padding for better readability */
+        box-sizing: border-box;
+        /* include padding and border in the div's total width */
+        display: flex;
+        flex-direction: column;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        margin-top: 1%;
+        background-color: rgb(127, 168, 255);
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 5%;
+    }
+
+    .receta form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .receta form button {
+        display: block;
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 767px) {
+        .receta {
+            max-width: 100%;
+            /* set the maximum width to 100% for small screens */
+            padding: 10px;
+            /* reduce the padding for small screens */
+        }
+    }
+
+    .collapse {
+        text-align: center;
+    }
+
+    .btn-primary {
+        margin-bottom: 1%;
+    }
+
+    .formulario-añadir {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(190, 209, 248);
+        padding-top: 3%;
+        padding-bottom: 3%;
+        border-style: solid;
+        border-color: #000000;
+        border-radius: 25px;
+    }
+
+    .añadir-receta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .mensaje {
+        text-align: center;
+    }
+
+    .mensajeSinDatos {
+        background-color: rgb(111, 132, 249);
+        border: 2px solid black;
+        padding: 10px;
+        display: inline-block;
+        border-radius: 25px;
+    }
+
+    .contenedor-mensaje {
+        text-align: center;
+        padding-bottom: 10%;
+    }
+
+    /* ------------------------------------------------------- Login ----------------------------------------------- */
